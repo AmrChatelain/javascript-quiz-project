@@ -95,7 +95,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     // YOUR CODE HERE:
-    //
+    function getQuestionIndex(questions) {
+     let currentQuestionIndex= 0;
+
+     for (let q of questions){
+      
+      return currentQuestionIndex +=1;
+     }
+
+      
+    }
+
+    function showQuestion(){
+
+      const currentQuestion = quizView[currentQuestionIndex];
+
+      CurrentQuestion.textContent= currentQuestionIndex +1;
+
+
+      //
+      const progressBar=(currentQuestionIndex/ questions.length)* 100;
+      progressBar.style.width =`${progressBar}%`;
+
+      
+    }
+  
     // 1. Show the question
     // Update the inner text of the question container element and show the question text
 
@@ -160,7 +184,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function showResults() {
 
     // YOUR CODE HERE:
-    //
+   quizView.classList.remove("view");
+
+   endView.classList.add("view");
+
+
+    
     // 1. Hide the quiz view (div#quizView)
     quizView.style.display = "none";
 

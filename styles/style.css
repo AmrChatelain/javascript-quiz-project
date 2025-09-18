@@ -37,6 +37,7 @@ header {
 }
 
 .view {
+    display: flex;
     text-align: center;
     margin-top: 20px;
 }
