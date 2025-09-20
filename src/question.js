@@ -11,4 +11,9 @@ class Question {
     }
 
     // 2. shuffleChoices()
+
+    shuffleChoices(){
+        return this.choices;
+    }
+
 }
