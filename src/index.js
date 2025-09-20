@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     // YOUR CODE HERE:
+    
     function getQuestionIndex(questions) {
      let currentQuestionIndex= 0;
 
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
     }
-
+  
     function showQuestion(){
 
       const currentQuestion = quizView[currentQuestionIndex];
@@ -184,10 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function showResults() {
 
     // YOUR CODE HERE:
+
    quizView.classList.remove("view");
 
    endView.classList.add("view");
-
 
     
     // 1. Hide the quiz view (div#quizView)
