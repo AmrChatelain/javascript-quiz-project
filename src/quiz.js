@@ -21,14 +21,22 @@ class Quiz {
 
     // 2. getQuestion()
      getQuestion(){
+
        return this.questions[this.currentQuestionIndex];
 
     }
     
     // 3. moveToNextQuestion()
-    moveToNextQuestion(){
+    
+      moveToNextQuestion() {
 
-    }
+     if (currentQuestionIndex < questions.length - 1) {
+       currentQuestionIndex++;
+    
+  } else {
+    return "you’re done";
+  }
+}
 
     // 4. shuffleQuestions()
     shuffleQuestions(){
@@ -44,4 +52,19 @@ class Quiz {
     hasEnded(){
         
     }
+    
+    // 7. filterQuestionsByDifficulty(difficulty)
+
+    filterQuestionsByDifficulty(difficulty) {
+        return this.questions.filter(question => question.difficulty >= difficulty);
+    }
+
+
+  // averageDifficulty()
+
+   averageDifficulty() {
+
+    return this.questions.reduce()
+   }
+
 }
