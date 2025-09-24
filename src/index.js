@@ -127,10 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     progressBar.style.width = `65%`; // This value is hardcoded as a placeholder
      //
-      const progressBar=(currentQuestionIndex/ questions.length)* 100;
-      progressBar.style.width =`${progressBar}%`;
+      const currentIndex = quiz.currentQuestionIndex + 1;
 
-      
+      const progressPercent = (currentIndex / quiz.questions.length) * 100;
+
+       progressBar.style.width = `${progressPercent}%`;
     
 
 
@@ -166,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // YOUR CODE HERE:
-    //
     // 1. Get all the choice elements. You can use the `document.querySelectorAll()` method.
+     const choices = document.querySelectorAll('input[name="answer"]');
 
 
     // 2. Loop through all the choice elements and check which one is selected
@@ -175,13 +176,27 @@ document.addEventListener("DOMContentLoaded", () => {
       //  When a radio input gets selected the `.checked` property will be set to true.
       //  You can use check which choice was selected by checking if the `.checked` property is true.
 
+       choices.forEach((choice) => {
+    if (choice.checked) {
+      selectedAnswer = choice.value;
+    }
+     });
+
       
     // 3. If an answer is selected (`selectedAnswer`), check if it is correct and move to the next question
       // Check if selected answer is correct by calling the quiz method `checkAnswer()` with the selected answer.
       // Move to the next question by calling the quiz method `moveToNextQuestion()`.
       // Show the next question by calling the function `showQuestion()`.
-  }  
 
+       if (selectedAnswer !== null) {
+
+    quiz.checkAnswer(selectedAnswer);
+
+    quiz.moveToNextQuestion();
+
+    showQuestion();
+  }
+}
 
 
 
@@ -189,19 +204,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // YOUR CODE HERE:
 
-   quizView.classList.remove("view");
-
-   endView.classList.add("view");
-
-    
     // 1. Hide the quiz view (div#quizView)
-    quizView.style.display = "none";
+
+       quizView.style.display = "none";
+
 
     // 2. Show the end view (div#endView)
-    endView.style.display = "flex";
+
+     endView.style.display = "block";
     
     // 3. Update the result container (div#result) inner text to show the number of correct answers out of total questions
     resultContainer.innerText = `You scored 1 out of 1 correct answers!`; // This value is hardcoded as a placeholder
-  }
-  
+
+       resultContainer.innerText = `Your final score is: ${quiz.score} out of ${quiz.questions.length}`;
+}
 });
