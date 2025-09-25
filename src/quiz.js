@@ -77,15 +77,22 @@ class Quiz {
     // 7. filterQuestionsByDifficulty(difficulty)
 
     filterQuestionsByDifficulty(difficulty) {
-        return this.questions.filter(question => question.difficulty >= difficulty);
+      if (typeof difficulty === 'number' && difficulty >= 1 && difficulty <= 3) {
+        this.questions = this.questions.filter(question => question.difficulty === difficulty);
     }
+  }
 
 
   // averageDifficulty()
 
    averageDifficulty() {
 
-    return this.questions.reduce()
+     if (this.questions.length === 0) return 0;
+
+    const total = this.questions.reduce((acc, q) => {
+      return acc + q.difficulty;
+    }, 0);
+    return  total / this.questions.length;
    }
 
 }
