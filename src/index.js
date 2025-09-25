@@ -95,31 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     // YOUR CODE HERE:
-    
-    function getQuestionIndex(questions) {
-     let currentQuestionIndex= 0;
-
-     for (let q of questions){
-      
-      return currentQuestionIndex +=1;
-     }
-
-      
-    }
-  
-    function showQuestion(){
-
-      const currentQuestion = quizView[currentQuestionIndex];
-
-      CurrentQuestion.textContent= currentQuestionIndex +1;
-
-      }
 
 
-     
-  
     // 1. Show the question
     // Update the inner text of the question container element and show the question text
+      
+    function showQuestion() {
+
+      const currentQuestion = document.querySelector('.quizView').[currentQuestion];
+    }
 
     
     // 2. Update the green progress bar
