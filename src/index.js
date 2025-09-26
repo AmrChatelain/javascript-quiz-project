@@ -99,11 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Show the question
     // Update the inner text of the question container element and show the question text
-      
-    function showQuestion() {
+      questionContainer.innerText = question.text;
 
-      const currentQuestion = document.querySelector('.quizView').[currentQuestion];
-    }
+   
+    
+
+  
 
     
     // 2. Update the green progress bar
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Update the question count text 
     // Update the question count (div#questionCount) show the current question out of total questions
     
-    questionCount.innerText = `Question 1 of 10`; //  This value is hardcoded as a placeholder
+    questionCount.innerText = `Question ${currentIndex} of ${quiz.questions.length}`;
 
 
     
