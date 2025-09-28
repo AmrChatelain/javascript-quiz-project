@@ -29,13 +29,7 @@ class Quiz {
     
       moveToNextQuestion() {
 
-     if (this.currentQuestionIndex < this.questions.length - 1) {
-       this.currentQuestionIndex++;
-       return this.currentQuestionIndex;
-    
-  } else {
-    return "you\'re done";
-  }
+     this.currentQuestionIndex++;
 }
 
     // 4. shuffleQuestions()
@@ -64,14 +58,12 @@ class Quiz {
     }
 
     // 6. hasEnded()
+
     hasEnded() {
-      if (this.currentQuestionIndex < this.questions.length) {
-        return false;
-      }
-      else if (this.currentQuestionIndex == this.questions.length) {
-        return true;
-      }
-      }
+      
+  return this.currentQuestionIndex >= this.questions.length;
+
+ }
         
     
     // 7. filterQuestionsByDifficulty(difficulty)
@@ -94,5 +86,6 @@ class Quiz {
     }, 0);
     return  total / this.questions.length;
    }
-
+   
+    
 }
